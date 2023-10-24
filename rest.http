@@ -1,0 +1,120 @@
+### Obtener todos los productos
+GET http://localhost:3000/productos/obtener
+
+### Crear un producto
+POST http://localhost:3000/productos/crear
+Content-Type: application/json
+
+{
+    "cantidad_stock":15,
+    "costo":200,
+    "tipo":"dulces",
+    "producto":{
+        "nombre":"Dulces de propoleo",
+        "marca":"Abejorro"
+    }
+}
+
+### Producto por Id
+GET http://localhost:3000/productos/obtener/6528c2a4841edb5523ff12bc
+### Actualizar por Id
+PATCH  http://localhost:3000/productos/actualizar/6528c3e493e57863ca801f4e
+Content-Type: application/json
+
+{
+    "cantidad_stock":15,
+    "costo":200,
+    "tipo":"dulces",
+    "producto":{
+        "nombre":"Dulces de miel",
+        "marca":"Abejorro"
+    }
+}
+### Borrar por Id
+DELETE  http://localhost:3000/productos/borrar/6528c3e493e57863ca801f4e
+
+
+
+
+
+
+### crear Paciente
+POST http://localhost:3000/paciente/crear
+Content-Type: application/json
+
+{
+    "nombre":"David",
+    "apellido":"Vazquez",
+    "telefono":9618902353,
+    "edad":19,
+    "codigo_ajeno":123,
+    "codigo_propio":456
+}
+
+### Obtener todos los pacientes
+GET http://localhost:3000/paciente/obtener
+
+### Paciente por Id
+GET http://localhost:3000/paciente/obtener/652cae8cecc4ed19f3cb2612
+### Actualizar Paciente por Id
+PATCH  http://localhost:3000/paciente/actualizar/652999e78272c357efe7400b
+Content-Type: application/json
+
+
+{
+    "nombre":"Luis",
+    "apellido":"Vazquez",
+    "telefono":9618902353,
+    "edad":19,
+    "codigo_ajeno":123,
+    "codigo_propio":456
+}
+
+### Borrar por Id
+DELETE  http://localhost:3000/paciente/borrar/652999e78272c357efe7400b
+
+### Borrar por Todos los clientes
+DELETE  http://localhost:3000/paciente/borrartodo
+
+
+
+
+
+
+
+## Crear un usuario
+POST http://localhost:3000/usuarios/crear
+Content-Type: application/json
+
+{
+    "Nombre_usuario":"Admin",
+    "Contraseña":"1234",
+    "Persona":{
+        "Nombre":"Luis David",
+        "Apellido":"Vazquez",
+        "Puesto":"Administrador"
+    }
+}
+
+### Obtener todos los usuarios
+GET http://localhost:3000/usuarios/obtener
+
+### Producto por Id
+GET http://localhost:3000/usuarios/obtener/65299b7060013362e375d269
+
+### Actualizar por Id
+PATCH  http://localhost:3000/usuarios/actualizar/65299b7060013362e375d269
+Content-Type: application/json
+
+{
+    "Nombre_usuario":"Admin",
+    "Contraseña":"1234",
+    "Persona":{
+        "Nombre":"Rodrigo Eliseo",
+        "Apellido":"García",
+        "Puesto":"Gerente"
+    }
+}
+
+### Borrar por Id
+DELETE  http://localhost:3000/usuarios/borrar/65299dc960013362e375d27a
