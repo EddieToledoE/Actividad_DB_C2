@@ -9,13 +9,17 @@ const PublicacionSchema = mongoose.Schema(
       type: String,
       required: [true, "Contenido necesario"],
     },
-    fechaCreacion:{
-        type: Date,
+    etiqueta: {
+      type: String,
     },
-    usuario :{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "users"
-    }
+    fechaCreacion: {
+      type: Date,
+      default: Date.now,
+    },
+    usuario: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "users",
+    },
   },
   {
     timestamps: true,
@@ -23,4 +27,6 @@ const PublicacionSchema = mongoose.Schema(
   }
 );
 
-module.exports = mongoose.models.publicacion || mongoose.model("publicacion", PublicacionSchema);
+module.exports =
+  mongoose.models.publicacion ||
+  mongoose.model("publicacion", PublicacionSchema);

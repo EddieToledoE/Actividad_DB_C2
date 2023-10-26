@@ -28,24 +28,13 @@ router.get("/obtener/:id", (req, res, next) => {
 
 router.patch("/actualizar/:id", (req, res, next) => {
   const { id } = req.params;
-  const {
-    Nombre_usuario,
-    Contraseña,
-    Persona,
-    usuario: { Nombre, Apellido, Puesto },
-  } = req.body;
+  const { email, contraseña } = req.body;
   UsersSchema.updateOne(
     { _id: id },
     {
       $set: {
-        Nombre_usuario,
-        Contraseña,
-        Persona,
-        usuario: {
-          Nombre,
-          Apellido,
-          Marca,
-        },
+        email,
+        contraseña,
       },
     }
   )

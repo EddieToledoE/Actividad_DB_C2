@@ -76,12 +76,6 @@ DELETE  http://localhost:3000/paciente/borrar/652999e78272c357efe7400b
 ### Borrar por Todos los clientes
 DELETE  http://localhost:3000/paciente/borrartodo
 
-
-
-
-
-
-
 ## Crear un usuario
 POST http://localhost:3000/usuarios/crear
 Content-Type: application/json
@@ -118,3 +112,96 @@ Content-Type: application/json
 
 ### Borrar por Id
 DELETE  http://localhost:3000/usuarios/borrar/65299dc960013362e375d27a
+
+### Crear usuario red social
+POST  http://localhost:3000/users/crear
+Content-Type: application/json
+
+{
+    "email":"ryazru1993@gmail.com",
+    "contraseña":"qwerty123"
+}
+
+### obtener usuarios red social
+GET http://localhost:3000/users/obtener
+
+### Obtener usuario red social id
+GET http://localhost:3000/users/obtener/6539d8ab817e6f157672af0e
+
+### Crear publicacion red social
+POST  http://localhost:3000/publicacion/crear
+Content-Type: application/json
+
+{
+    "titulo":"Ya tengo chamba",
+    "contenido":"quiero renunciar",
+    "etiqueta":"Trabajo",
+    "usuario":"65386c75ba917dc958e921a7"
+}
+
+### Crear publicaciones red social
+POST  http://localhost:3000/publicacion/crearMuchos
+Content-Type: application/json
+
+[
+  {
+    "titulo": "Hola mundo",
+    "contenido": "Este es mi primer programa",
+    "etiqueta":"Social",
+    "fechaCreación": "2023-10-22T00:00:00.000Z",
+    "usuario": "65386c75ba917dc958e921a7"
+  },
+  {
+    "titulo": "Viaje por el mundo",
+    "contenido": "Me voy a vivir a suchiapa",
+    "etiqueta":"Noticias",
+    "fechaCreación": "2023-10-22T00:00:00.000Z",
+    "usuario": "65386c75ba917dc958e921a7"
+  }
+]
+### obtener todas publicaciones red social
+GET http://localhost:3000/publicacion/obtener
+
+### Obtener publicaciones por id del usuario
+GET http://localhost:3000/publicacion/publicacionesxusuario/65386c75ba917dc958e921a7
+### Obtener todas las publicaciones con su usuario (quien las hizo)
+GET http://localhost:3000/publicacion/publicacionesconusuario
+
+### Obtener todas las publicacion por id  con comentarios
+GET http://localhost:3000/publicacion/publicacioncomentarios/6539e92edca6874ca39f7a8f
+
+### Obtener todas las publicaciones con su usuario, clasificadas por etiquetas
+GET http://localhost:3000/publicacion/publicacionesconusuario/Trabajo
+
+### Crear comentario
+POST http://localhost:3000/comentario/crear
+Content-Type: application/json
+
+{
+    "contenido":"Por ahi roban, ten cuidado",
+    "usuario":"65386da8ba917dc958e921ab",
+    "publicacion":"6539e92edca6874ca39f7a8f"
+}
+
+### Crear varios comentarios
+POST http://localhost:3000/comentario/crearMuchos
+Content-Type: application/json
+[
+{
+    "contenido":"Por ahi roban, ten cuidado",
+    "usuario":"65386da8ba917dc958e921ab",
+    "publicacion":"6539e92edca6874ca39f7a8f"
+},
+{
+    "contenido":"Por ahi roban, ten cuidado",
+    "usuario":"65386da8ba917dc958e921ab",
+    "publicacion":"6539e92edca6874ca39f7a8f"
+},
+]
+### Obtener todos los comentarios 
+GET http://localhost:3000/comentario/obtener
+
+
+
+
+

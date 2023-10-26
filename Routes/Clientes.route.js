@@ -9,8 +9,6 @@ router.get("/obtener", (req, res, next) => {
     .catch((error) => res.json({ message: error }));
 });
 
-
-
 router.post("/crear", async (req, res, next) => {
   try {
     const cliente = new ClienteSchema(req.body);
@@ -34,9 +32,9 @@ router.patch("/actualizar/:id", (req, res, next) => {
     Nombre,
     Apellido,
     Telefono,
-    Direccion: {CP,Calle,Municipio,Estado},
+    Direccion: { CP, Calle, Municipio, Estado },
   } = req.body;
- ClienteSchema.updateOne(
+  ClienteSchema.updateOne(
     { _id: id },
     {
       $set: {

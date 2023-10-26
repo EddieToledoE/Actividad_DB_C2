@@ -4,19 +4,21 @@ const ComentarioSchema = mongoose.Schema(
     contenido: {
       type: String,
       required: [true, "Contenido necesario"],
-    },fechaCreacion:{
-        type:Date,
+    },
+    fechaCreacion: {
+      type: Date,
+      default: Date.now,
     },
     publicacion: {
       type: mongoose.Schema.Types.ObjectId,
-      ref:"publicacion",
+      ref: "publicacion",
       required: [true, "publicacion necesaria"],
     },
     usuario: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref:"users",
-        required: [true, "Usuario necesario"],
-      },
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "users",
+      required: [true, "Usuario necesario"],
+    },
   },
   {
     timestamps: true,
@@ -24,4 +26,5 @@ const ComentarioSchema = mongoose.Schema(
   }
 );
 
-module.exports = mongoose.models.comentario || mongoose.model("comentario", ComentarioSchema);
+module.exports =
+  mongoose.models.comentario || mongoose.model("comentario", ComentarioSchema);

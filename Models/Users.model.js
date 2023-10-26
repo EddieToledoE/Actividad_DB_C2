@@ -4,6 +4,7 @@ const UsersSchema = mongoose.Schema(
     email: {
       type: String,
       required: [true, "Email necesario"],
+      unique:true,
       validate: {
         validator: function (value) {
           // Aquí definimos una expresión regular para validar el dominio del correo electrónico.
