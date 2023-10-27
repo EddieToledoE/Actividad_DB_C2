@@ -26,6 +26,15 @@ router.get("/obtener/:id", (req, res, next) => {
     .catch((error) => res.json({ message: error }));
 });
 
+router.get("/buscar/:email", (req, res, next) => {
+  const { email } = req.params;
+  UsersSchema.findOne({
+    email: { $eq: email },
+  })
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+});
+
 router.patch("/actualizar/:id", (req, res, next) => {
   const { id } = req.params;
   const { email, contraseña } = req.body;

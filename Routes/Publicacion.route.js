@@ -55,8 +55,8 @@ router.get("/publicacionesconusuario", (req, res) => {
     .catch((error) => res.json({ message: error }));
 });
 
-router.get("/publicacioncomentarios/:id", (req, res) => {
-  const { id } = req.params;
+router.get("/publicacioncomentarios", (req, res) => {
+  //const { id } = req.params;
   PublicacionSchema.aggregate([
     {
       $lookup: {
@@ -66,8 +66,6 @@ router.get("/publicacioncomentarios/:id", (req, res) => {
         as: "comentarios",
       },
     },
-    { $unwind: "$comentarios" },
-    { $match: { _id: id } },
   ])
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
@@ -114,9 +112,9 @@ router.patch("/actualizar/:id", (req, res, next) => {
     .catch((error) => res.json({ message: error }));
 });
 
-router.delete("/borrar/:id", (req, res, next) => {
-  const { id } = req.params;
-  PublicacionSchema.deleteOne({ _id: id })
+router.delete("/borrar/:fecha", (req, res, next) => {
+  const { fecha } = req.params;
+  PublicacionSchema.deleteOne({ fechaCreacion: fecha })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });

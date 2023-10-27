@@ -112,21 +112,15 @@ Content-Type: application/json
 
 ### Borrar por Id
 DELETE  http://localhost:3000/usuarios/borrar/65299dc960013362e375d27a
-
+###//PETICIONES DE LA TAREA //###
 ### Crear usuario red social
 POST  http://localhost:3000/users/crear
 Content-Type: application/json
 
 {
-    "email":"ryazru1993@gmail.com",
-    "contraseña":"qwerty123"
+    "email":"Borrado@outlook.es",
+    "contraseña":"eldeividjajaasies"
 }
-
-### obtener usuarios red social
-GET http://localhost:3000/users/obtener
-
-### Obtener usuario red social id
-GET http://localhost:3000/users/obtener/6539d8ab817e6f157672af0e
 
 ### Crear publicacion red social
 POST  http://localhost:3000/publicacion/crear
@@ -159,20 +153,6 @@ Content-Type: application/json
     "usuario": "65386c75ba917dc958e921a7"
   }
 ]
-### obtener todas publicaciones red social
-GET http://localhost:3000/publicacion/obtener
-
-### Obtener publicaciones por id del usuario
-GET http://localhost:3000/publicacion/publicacionesxusuario/65386c75ba917dc958e921a7
-### Obtener todas las publicaciones con su usuario (quien las hizo)
-GET http://localhost:3000/publicacion/publicacionesconusuario
-
-### Obtener todas las publicacion por id  con comentarios
-GET http://localhost:3000/publicacion/publicacioncomentarios/6539e92edca6874ca39f7a8f
-
-### Obtener todas las publicaciones con su usuario, clasificadas por etiquetas
-GET http://localhost:3000/publicacion/publicacionesconusuario/Trabajo
-
 ### Crear comentario
 POST http://localhost:3000/comentario/crear
 Content-Type: application/json
@@ -198,6 +178,54 @@ Content-Type: application/json
     "publicacion":"6539e92edca6874ca39f7a8f"
 },
 ]
+### Actulizar comentario por id
+PATCH http://localhost:3000/comentario/actualizar/6539eadd87cf8801fdec3228
+Content-Type: application/json
+
+{
+    "contenido" : "Saluditos a todos, pasenla bonito pero bonito bonito"
+}
+
+### Actulizar publicacion por id
+PATCH http://localhost:3000/publicacion/actualizar/6539e92edca6874ca39f7a8e
+Content-Type: application/json
+
+{
+    "titulo" : "Adios mundo",
+    "contenido" : "Mi ultimo programa, me doy de baja"
+}
+
+### 1 Obtener usuario red social por email
+GET http://localhost:3000/users/buscar/ryazru1993@gmail.com
+
+### 2A Obtener publicaciones por id del usuario
+GET http://localhost:3000/publicacion/publicacionesxusuario/65386c75ba917dc958e921a7
+
+### 2B Obtener todas las publicaciones con su usuario (quien las hizo)
+GET http://localhost:3000/publicacion/publicacionesconusuario
+### 3 Obtener todas las publicaciones con comentarios
+GET http://localhost:3000/publicacion/publicacioncomentarios
+
+### 4 Obtener todas las publicaciones con su usuario, clasificadas por etiquetas
+GET http://localhost:3000/publicacion/publicacionesconusuario/Trabajo
+
+
+### Borrar por usuario Id
+DELETE  http://localhost:3000/users/borrar/653af3c824d392a2c6e375bf
+
+### Borrar publicacion por fechaCreacion
+DELETE  http://localhost:3000/publicacion/borrar/2023-10-22T00:00:00.000Z
+
+###EXTRAS
+### obtener usuarios red social
+GET http://localhost:3000/users/obtener
+
+### Obtener usuario red social id
+GET http://localhost:3000/users/obtener/6539d8ab817e6f157672af0e
+
+### obtener todas publicaciones red social
+GET http://localhost:3000/publicacion/obtener
+
 ### Obtener todos los comentarios 
 GET http://localhost:3000/comentario/obtener
 
