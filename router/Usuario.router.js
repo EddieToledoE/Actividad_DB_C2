@@ -17,13 +17,6 @@ router.get("/obtenerTodos", (req, res) => {
     .catch((error) => res.json({ message: error }));
 })
 
-router.get("/obtenerUsuario/:email", (req, res) => {
-    const email = req.params.email;
-    const usuario = Usuarios.findOne({ where: { email: email } })
-    .then((data) => res.json(data))
-    .catch((error) => res.json({ message: error }));
-})
-
 
 
 

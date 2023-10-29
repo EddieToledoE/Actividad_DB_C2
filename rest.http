@@ -4,8 +4,6 @@
 POST http://localhost:3001/Usuarios/crear
 ### Obtener Usuarios
 GET http://localhost:3001/Usuarios/obtenerTodos
-### Obtener Usuarios por Email
-GET http://localhost:3001/Usuarios/obtenerUsuario/luis@upchiapas.edu
 
 
 
