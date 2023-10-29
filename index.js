@@ -20,18 +20,4 @@ async function connection() {
 }
 connection();
 
-module.exports = sequelize;
-
-app.listen(port, () => { 
-    console.log('Servidor corriendo en el puerto ', port)
-})
-
-require('./relaciones');
-const usuario = require("./router/Usuario.router");
-app.use("/Usuarios", usuario);
-const publicacion = require("./router/Publicacion.router");
-app.use("/Publicacion", publicacion);
-const comentario = require("./router/Comentario.router");
-app.use("/Comentario", comentario);
-
 
