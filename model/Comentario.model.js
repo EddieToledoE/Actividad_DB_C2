@@ -19,6 +19,13 @@ const Comentario = sequelize.define('Comentarios', {
         model: "Publicaciones",
         key: "id"
     }
+  },
+  usuarioId: {
+    type: Sequelize.INTEGER,
+    references: {
+        model: "Usuarios",
+        key: "id"
+    }
   }
 }, {
   // Otras opciones de modelos aqui van :)

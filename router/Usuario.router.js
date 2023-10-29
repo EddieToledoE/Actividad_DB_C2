@@ -17,7 +17,20 @@ router.get("/obtenerTodos", (req, res) => {
     .catch((error) => res.json({ message: error }));
 })
 
+router.get("/obtenerUsuario/:email", (req, res) => {
+    const email = req.params.email;
+    Usuarios.findOne({ where: { email: email } })
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+})
 
+router.delete("/borrarUsuario/:id",  (req, res) => {
+    const id = req.params.id;
+     Usuarios.destroy({ where: { id: id } })
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+    
+})
 
 
 module.exports = router;

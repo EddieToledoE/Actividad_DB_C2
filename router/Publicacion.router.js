@@ -7,10 +7,11 @@ router.post("/crear", async (req, res) => {
         titulo: "Noticias", 
         contenido: "Huracan en Acapulco",
         fechaCreacion: 25/10/2023,
-        usuarioId: 2
+        usuarioId: 1
     })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
+
 })
 
 router.get("/obtenerTodos", (req, res) => {
@@ -19,5 +20,34 @@ router.get("/obtenerTodos", (req, res) => {
     .catch((error) => res.json({ message: error }));
 })
 
+router.get("/obtenerPublicacion/:usuarioId", (req, res) => {
+    const usuarioId = req.params.usuarioId;
+    Publicacion.findAll({ where: { usuarioId: usuarioId } })
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+})
+
+router.delete("/borrarPublicacion/:fecha",  (req, res) => {
+    const fecha = req.params.fecha;
+    Publicacion.destroy({ where: { fechaCreacion: fecha } })
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+})
+
+router.patch("/actualizar/:id",  (req, res) => {
+    const id = req.params.id;
+    Publicacion.update(
+        { 
+          contenido: "Nuevo contenido de la publicacion",
+        },
+        {
+        where: {
+          id: id
+        }
+      })
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+    
+})
 
 module.exports = router;

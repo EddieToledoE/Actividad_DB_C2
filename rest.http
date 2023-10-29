@@ -4,8 +4,10 @@
 POST http://localhost:3001/Usuarios/crear
 ### Obtener Usuarios
 GET http://localhost:3001/Usuarios/obtenerTodos
-### Obtener Usuarios por Email
+### Buscar Usuarios por Email
 GET http://localhost:3001/Usuarios/obtenerUsuario/luis@upchiapas.edu
+### Borrar Usuario por id
+DELETE  http://localhost:3001/Usuarios/borrarUsuario/1
 
 
 
@@ -15,6 +17,12 @@ GET http://localhost:3001/Usuarios/obtenerUsuario/luis@upchiapas.edu
 POST http://localhost:3001/Publicacion/crear
 ### Obtener Publicaciones
 GET http://localhost:3001/Publicacion/obtenerTodos
+### Buscar Publicaciones por Usuario
+GET http://localhost:3001/Publicacion/obtenerPublicacion/1
+### Borrar publicacion por fecha
+DELETE  http://localhost:3001/Publicacion/borrarPublicacion/1970-01-01T00:00:00.000Z
+### Actualizar contenido del comentario
+PATCH http://localhost:3001/Publicacion/actualizar/1
 
 
 
@@ -22,5 +30,11 @@ GET http://localhost:3001/Publicacion/obtenerTodos
 
 ### Crear Comentario
 POST http://localhost:3001/Comentario/crear
-### Obtener Publicaciones
+### Obtener Comentarios
 GET http://localhost:3001/Comentario/obtenerTodos
+### Buscar Comentarios por Publicacion
+GET http://localhost:3001/Comentario/obtenerComentario/1
+### Borrar Comentario por fecha y publicacion
+DELETE  http://localhost:3001/Comentario/borrarComentarioFecha
+### Actualizar contenido del comentario
+PATCH http://localhost:3001/Comentario/actualizar/1
