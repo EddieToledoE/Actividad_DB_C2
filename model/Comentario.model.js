@@ -33,6 +33,5 @@ const Comentario = sequelize.define('Comentarios', {
   timestamps: false,
   createdAt: false
 });
-
 module.exports = Comentario;
 

@@ -11,7 +11,6 @@ router.post("/crear", async (req, res) => {
     })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
-
 })
 
 router.get("/obtenerTodos", (req, res) => {
@@ -47,7 +46,6 @@ router.patch("/actualizar/:id",  (req, res) => {
       })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
-    
 })
 
 module.exports = router;

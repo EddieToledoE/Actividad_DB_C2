@@ -29,7 +29,6 @@ router.delete("/borrarUsuario/:id",  (req, res) => {
      Usuarios.destroy({ where: { id: id } })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
-    
 })
 
 

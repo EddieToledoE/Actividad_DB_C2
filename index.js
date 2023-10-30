@@ -26,6 +26,7 @@ app.listen(port, () => {
     console.log('Servidor corriendo en el puerto ', port)
 })
 
+
 require('./relaciones');
 const usuario = require("./router/Usuario.router");
 app.use("/Usuarios", usuario);

@@ -34,7 +34,6 @@ router.delete("/borrarComentarioFecha",  (req, res) => {
         } })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
-
 })
 
 router.patch("/actualizar/:id",  (req, res) => {
@@ -50,7 +49,6 @@ router.patch("/actualizar/:id",  (req, res) => {
       })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
-    
 })
 
 module.exports = router;
